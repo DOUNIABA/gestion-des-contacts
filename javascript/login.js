@@ -71,7 +71,7 @@ function validation(){
         img22.innerHTML='<img src="img/1200px-OOjs_UI_icon_error-destructive.svg.png" style="POSITION: relative;top:-49px;right:-395px;width: 39px;">'
         pass2.innerHTML="fill the password Please!";
         return false
-        
+
     }else if(passwordver.value!=""){
         passwordver.style.borderColor='green';
         passwordver.style.borderWidth='3px';
@@ -119,3 +119,4 @@ function validateUsername(username)
         var re = /\"|\#|\'|\*|\?|\!|\-/;
         return re.test(passwordver);
     }
+    
