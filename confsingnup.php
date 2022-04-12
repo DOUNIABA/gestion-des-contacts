@@ -31,15 +31,16 @@ Class User extends Connection{
     }
 
     public function insertuser(){
-            $conn = new Connection();
-            $ss = $conn->connect();
+         $conn = new Connection();
+         $ss = $conn->connect();
           $req="INSERT INTO user (username, password) VALUES ( ?, ?)";
           $foo=$ss->prepare($req);
           $foo->bind_param("ss",$this->username, $this->password);
-          return $foo -> execute();
+          return $foo->execute();
 
-
+       
     }
 
 }
+
 ?>

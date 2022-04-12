@@ -1,4 +1,24 @@
 
+<?php
+include('conflogin.php');
+$error = "";
+if (isset($_POST['Login'])){
+  
+  $user = new User();
+
+   if($user->login($_POST['username'], $_POST['password'])){
+  
+    header("Location: pageprofile.php");
+    
+  }else{
+    $error = "incorect username or password !!";
+      
+   }
+  
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +55,7 @@
             <span id="pass" style="color:red; font-weight: bold; "></span>
         </div >
         
-        <input type="submit" name="Login" value="login" class="   btn-primary mt-5 " style=" width: 447px;" >
+        <input type="submit" name="Login" value="login" class=" btn-primary mt-5 " style=" width: 447px;" >
         <div>No account? <a href="signup.php">Sign up</a> here.</div>
       </form>
       </div>
