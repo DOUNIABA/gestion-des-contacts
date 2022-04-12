@@ -19,11 +19,12 @@
                     <span>No contacts.</span>
                     <h3>Add contact</h3>              
                   </div>
+
                 <form class="form-container" action="" method="POST" onsubmit="return validation()">  
                   <div class="mb-3 " style="width: 40%;">
                   <label for="exampleFormControlInput1" class="form-label">Name</label>
                   <input type="text" class="form-control" id="nom" name="nom" placeholder="Enter name">
-                  <p id="img" style="margin-bottom: -1rem;"></p>
+                  <p id="img" style="margin-bottom: -1rem; width: 10px;"></p>
                   <span id="nomid" style="color:red; font-weight: bold;"></span>
                 </div>
 
@@ -36,7 +37,7 @@
                
                     <div class="mb-3"  style="width: 40%;">
                       <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="email" placeholder="Enter email">
+                      <input type="text" class="form-control" id="email" placeholder="Enter email">
                       <p id="img3" style="margin-bottom: -1rem;"></p>
                       <span id="mailid" style="color:red; font-weight: bold;"></span>
                     </div>
@@ -45,11 +46,14 @@
                     <label for="exampleFormControlTextarea1" class="form-label">Address</label>
                     <span id="addressid" class="text-danger"></span>
                     <textarea class="form-control" id="adress" rows="3"></textarea>
+                    <p id="img4" style="margin-bottom: -1rem;"></p>
+                      <span id="addid" style="color:red; font-weight: bold;"></span>
                   </div>
                  
                   <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3">Save</button>
+                   <button type="submit" class="btn btn-primary mb-3">Save</button>
                   </div>
+
               </div>
 
                 </form>         

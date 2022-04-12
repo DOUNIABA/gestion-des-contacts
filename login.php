@@ -36,7 +36,7 @@
         </div >
         
         <input type="submit" name="Login" value="login" class="   btn-primary mt-5 " style=" width: 447px;" >
-        <div>No account? <a href="signup.html">Sign up</a> here.</div>
+        <div>No account? <a href="signup.php">Sign up</a> here.</div>
       </form>
       </div>
       </div>

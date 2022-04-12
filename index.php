@@ -1,4 +1,6 @@
 
+<?php
+include "connexion.php"?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,15 +15,15 @@
     <nav class="navbar navbar-dark bg-dark justify-content-between">
         <a class="navbar-brand">Contacts list</a>
         <form class="form-inline">
-          <a class=" my-2 my-sm-0 nav-link text-light" href="#">Login</a>
+          <a class=" my-2 my-sm-0 nav-link text-light" href="login.php">Login</a>
         </form>
       </nav> 
 <div class="container-fluid">
      <div class=" row justify-content-center px-3" style="margin-top: 170px;">
      
          <h1 style="font-size: 68px;">Hello!</h1>
-         <p class="fs-3"><a href="#">Sign up</a> to start creating your contacts list</p>
-         <p class="fs-3">Already have an account?<a href="login.html">Login here</a> </p>
+         <p class="fs-3"><a href="signup.php">Sign up</a> to start creating your contacts list</p>
+         <p class="fs-3">Already have an account?<a href="login.php">Login here</a> </p>
    
      </div></div>
 </body>

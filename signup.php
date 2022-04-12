@@ -1,4 +1,22 @@
 
+<?php
+
+include ("confsingnup.php");
+$ins=new User();
+
+if(isset($_POST['signup'])){
+$ins->setpassword($_POST['pass']);
+$ins->getconfipassword($_POST['cpass']);
+$ins->setusername($_POST['user']);
+if($ins->insertuser()){
+    echo 'bien ajouté';
+}else{
+    echo 'non ajouté';
+}
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,28 +41,28 @@
             <form method="post" action="" onsubmit="return validation()"> 
                 <div class="mb-3 ">
                   <label for="exampleInputEmail1" class="form-label">Username</label>
-                  <input type="text" class="form-control" id="username" placeholder="Username" style=" padding: 11px ;width: 447px;" >
+                  <input type="text" class="form-control" id="username" placeholder="Username" name="user" style=" padding: 11px ;width: 447px;" >
                   <p id="img" style="margin-bottom: -1rem;"></p>
                   <span id="idemail" style="color:red; font-weight: bold;"></span>
                 </div>
                  <div class="mb-3 ">
                     <label for="exampleInputEmail1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password" style=" padding: 11px ;width: 447px;" >
+                    <input type="password" class="form-control" id="password" name="pass" placeholder="Password" style=" padding: 11px ;width: 447px;" >
                     <p id="img2"  style="margin-bottom: -1rem;"></p>
                     <span id="pass" style="color:red; font-weight: bold; "></span>
                   </div>
                  <div class="mb-3 ">
                   <label for="exampleInputPassword1" class="form-label">Password verify</label>
-                  <input type="password" class="form-control" id="passwordver" placeholder="Password verify" style=" padding: 11px ;width: 447px;" >
+                  <input type="password" class="form-control" id="passwordver" name ="cpass"placeholder="Password verify" style=" padding: 11px ;width: 447px;" >
                   <p id="img22"  style="margin-bottom: -1rem;"></p>
                   <span id="pass2" style="color:red; font-weight: bold; "></span>
                 </div>   
-                 <button type="submit" class="btn btn-primary mt-5"  style=" width: 447px;">Sign up</button>
+                 <button type="submit" name="signup" class="btn btn-primary mt-5"  style=" width: 447px;">Sign up</button>
                  <div class="mt-3 mb-3 text-center">
                     <span class="text-muted">
                    Already have an account?
                     </span>
-                     <a class="text-primary text-decoration-underline" href="login.html"> <span >Login </span></a> 
+                     <a class="text-primary text-decoration-underline" href="login.php"> <span >Login </span></a> 
                      her
                   </div>
             </form>
