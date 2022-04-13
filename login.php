@@ -6,8 +6,7 @@ if (isset($_POST['Login'])){
   
   $user = new User();
   $user->setpassword($_POST['password']);
-$user->setusername($_POST['username']);
-
+  $user->setusername($_POST['username']);
 
    if($user->login()){
   
@@ -16,8 +15,7 @@ $user->setusername($_POST['username']);
   }else{
     $error = "incorect username or password !!";
       
-   }
-  
+   }  
   }
 
 ?>
