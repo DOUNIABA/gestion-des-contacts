@@ -5,8 +5,11 @@ $error = "";
 if (isset($_POST['Login'])){
   
   $user = new User();
+  $user->setpassword($_POST['password']);
+$user->setusername($_POST['username']);
 
-   if($user->login($_POST['username'], $_POST['password'])){
+
+   if($user->login()){
   
     header("Location: pageprofile.php");
     

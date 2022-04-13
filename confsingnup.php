@@ -1,8 +1,8 @@
 <?php
 
 include ("connexion.php");
-Class User extends Connection{
-
+Class User {
+    
     private $id;
     private $username;
     private $password;

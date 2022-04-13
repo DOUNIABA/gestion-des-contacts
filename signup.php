@@ -3,16 +3,15 @@
 
 include ("confsingnup.php");
 $ins=new User();
-
 if(isset($_POST['signup'])){
-$ins->setpassword($_POST['pass']);
 $ins->setusername($_POST['user']);
+$ins->setpassword(password_hash($_POST['pass'], PASSWORD_DEFAULT));
 if($ins->insertuser()){
     echo 'bien ajouté';
 }else{
     echo 'non ajouté';
 }
-}
+}   
 ?>
 
 

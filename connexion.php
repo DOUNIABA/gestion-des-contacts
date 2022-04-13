@@ -9,8 +9,8 @@ class Connection{
 
  
     public function connect(){
-           $conn=new mysqli($this->host, $this->username, $this->password, $this->database);
-           return $conn;
+        $conn= new PDO("mysql:host=$this->host; dbname=$this->database" ,$this->username ,$this->password);
+        return $conn;
     }
 }
 
