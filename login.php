@@ -1,6 +1,6 @@
 
 <?php
-include('conflogin.php');
+include('user.php');
 $error = "";
 if (isset($_POST['Login'])){
   

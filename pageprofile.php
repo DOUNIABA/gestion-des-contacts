@@ -1,5 +1,7 @@
 <?php
-session_start();?>
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,13 +15,16 @@ session_start();?>
     <nav class="navbar navbar-dark bg-dark justify-content-between">
         <a class="navbar-brand">Contacts list</a>
         <form class="form-inline">
-            <a class=" my-2 my-sm-0 nav-link text-light" href="login.php">Login</a>
-    
+           <div class="head" style="display:flex;">
+            <a class=" my-2 my-sm-0 nav-link text-light" href="ListContact.php">contact</a>
+            <a class=" my-2 my-sm-0 nav-link text-light" href="contact.php">profile</a>
+            <a class=" my-2 my-sm-0 nav-link text-light" href="login.php">Login</a></div>
+
         </form>
       </nav>
       <di class="d-flex justify-content-center align-items-center">
            <div  class=" m-5  w-100">
-            <h1 class="my-5"> Welcome,  <?php echo $_SESSION['username'];?> !</h1>
+            <h1 class="my-5"> Welcome, <?php echo $_SESSION['username'];?> !</h1>
             <h3 class=" my-5"> Your  profile:</h3>
     
             <table class="table">
@@ -37,7 +42,8 @@ session_start();?>
                   </tr>
                   <tr>
                     <td class="fs-5 fw-bold ">Username;</td>
-                    <td> <?php echo $_SESSION["username"]; ?>  
+                    <td> <?php echo $_SESSION['username'];
+                     ?>  
                 </div></td>
                   </tr>
                   <tr>

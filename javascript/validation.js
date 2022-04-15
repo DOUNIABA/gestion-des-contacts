@@ -28,6 +28,13 @@ function validation(){
         nomid.innerHTML='** Username should contains at least 2 caracters! **'
         return false;
        }
+       if(!validateUsername(nom.value)){
+        nom.style.borderColor='red';
+        nom.style.borderWidth='3px';
+        img.innerHTML='<img src="images/1200px-OOjs_UI_icon_error-destructive.svg.png" style=" POSITION: RELATIVE;bottom: 46px; left: 404px; width: 39px">'
+        nomid.innerHTML="The username should contain only numbers and letters";
+        return false
+    }
 
     if (phone.value=="") {
         phone.style.borderColor='red';
@@ -74,12 +81,18 @@ function validation(){
     }
 
     else if (email.indexOf('@') <= 0) {
-        email.style.borderColor='green';
+        email.style.borderColor='red';
         email.style.borderWidth='3px'
         img3.innerHTML='<img src="images/1200px-OOjs_UI_icon_error-destructive.svg.png.png" style=" POSITION: RELATIVE;bottom: 40px; left: 404px; width:20px;">'
         mailid.innerHTML=" ** @ Invalid Position!! **"
         return false;
       }   
+      if(validateEmail(email.value)){
+        email.style.borderColor='red';
+        email.style.borderWidth='3px'
+        img3.innerHTML='<img src="images/1200px-OOjs_UI_icon_error-destructive.svg.png" style="POSITION: relative;top: -49px;right:-395px;width:39px;">';
+        mailid.innerHTML="invalid email";
+        return false;
 
       if (Address.value == "") {
         Address.style.borderColor='red';
@@ -113,4 +126,16 @@ function validation(){
            var regxp=/^[+]*[(]{0,1}[0-9]{1,2}[)]{0,1}[-\s\./0-9]*$/;
            return regxp.test(phone.value);
        }
+
+       function validateUsername(username) 
+    {
+        var re = /^[a-zA-Z]{3,20}$/;
+        return re.test(username);
     }
+
+    function validateEmail(email) 
+    {
+        var re = /\"|\#|\'|\*|\?|\!|\-/;
+        return re.test(email);
+    }
+}}

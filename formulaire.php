@@ -1,5 +1,20 @@
-<!DOCTYPE html>
-<html>
+
+  <?php
+  include ("contact.php");
+ session_start();
+
+   $form=new contact();
+   $form->setid_user($_SESSION["id"]);
+
+  $row= $form->select();
+
+
+
+ 
+  ?>
+
+ <!DOCTYPE html>
+ <html>
     <head>
         <meta charset="utf-8">
         <title>list </title>
@@ -9,14 +24,11 @@
         <link rel="stylesheet" href=".css">
     </head>
     <body>
-
-      <header style="border: solid 40px rgb(79, 76, 76);">
-        
-      </header>
-       
-        <div class="container " style="margin-left: 16%;">
+        <div class="container " style="margin-left: 16%;  margin-top: 10%;">
             <div class="table-responsive">
                 <table class="table align-middle">
+               <a  href="ListContact.php"> <button type="submit" class="btn btn-primary">ADD NEW CONTACT</button>  </a>
+
                   <thead>
                     <tr>
                       <th>Contact list:</th>
@@ -24,26 +36,17 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                     <th>Alonzo E Barber</th>
-                     <td>alonzo@barber.com</td>
-                     <td>818-740-3656</td>
-                     <td>848 Glendale Avenue Los 
-                         Angeles California 90017</td>
-                     <td> <button class="btn btn-light"><a href="">Edit</a></button>
-                        <button class="btn btn-light" ><a href="">Delete</a></button></td>
+                  
+                
+                 <?php foreach($row as $rows){?>
+                    <td><?= $rows['username']; ?></td>
+                     <th><?= $rows['email']; ?></th>
+                     <td><?= $rows['phone']; ?></td>
+                     <td><?= $rows['addresse']; ?></td>
+                     <td> <button class="btn btn-light"><a href="update.php?updateid=<?=$rows['id']?>">Edit</a></button>
+                        <button class="btn btn-light" ><a href="dele.php?deletid=<?=$rows['id']?>">Delete</a></button></td>
                     </tr>
-                    <tr class="align-bottom">
-                     <th>Annmarie N Reeves</th>
-                     <td>annemarie@barber.com</td>
-                     <td>413-626-0746/td>
-                     <td>848 Glendale Avenue Los Angeles California 90017</td>
-                     <td>
-                        <button class="btn btn-light"><a href="">Edit</a></button>
-                        <button class="btn btn-light" ><a href="">Delete</a></button>
-                        </td>
-                    </tr>
-                   
+                    <?php } ;?>
                   </tbody>
                 </table>
               </div>

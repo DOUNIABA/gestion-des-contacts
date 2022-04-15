@@ -1,24 +1,22 @@
 
 <?php
 
-include('contact.php');
-session_start();
-$contact= new Contact();
-if(isset($_POST['save'])){
-  $contact->setusername($_POST['nom']);
-  $contact->setemail($_POST['email']);
-  $contact->setphone($_POST['phone']);
-  $contact->setaddress($_POST['address']);
-  $contact->setid_user($_SESSION["id"]);
+include ('contact.php');
+  $edit=new contact();
+  $edit->setid($_GET['updateid']);
+  $result=$edit->select_COTACT();
 
-  if($contact->addcontact()){
-    header('location:formulaire.php');
-  }else{
-     echo "non ajouté";
-  }
- 
+  if (isset($_POST['update'])) {
+$edit->setemail($_POST['email']);
+$edit->setusername($_POST['nom']);
+$edit->setaddress($_POST['address']);
+$edit->setphone($_POST['phone']);
+if($edit->update()){
+   header('location:formulaire.php');
 }
-?>
+}
+$rows=$result[0];?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,7 +27,6 @@ if(isset($_POST['save'])){
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>        
     </head>
     <body>
-  
         <main>
             <div class="container" >
               <div class="content" style="margin-left: 16%;">
@@ -43,35 +40,34 @@ if(isset($_POST['save'])){
                 <form class="form-container" action="" method="POST" onsubmit="return validation()">  
                   <div class="mb-3 " style="width: 40%;">
                   <label for="exampleFormControlInput1" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="nom" name="nom" placeholder="Enter name">
+                  <input type="text" class="form-control" id="nom" name="nom" placeholder="Enter name"  value="<?php echo $rows['username']; ?>">
                   <p id="img" style="margin-bottom: -1rem; width: 10px;"></p>
                   <span id="nomid" style="color:red; font-weight: bold;"></span>
                 </div>
 
                     <div class="mb-3"  style="width: 40%;">
                       <label for="exampleFormControlInput1" class="form-label">Phone</label>
-                      <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone">
+                      <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone"  value="<?php echo $rows['phone']; ?>">
                       <p id="img2" style="margin-bottom: -1rem;"></p>
                       <span id="phoneid"style="color:red; font-weight: bold;"></span>
                     </div>
                
                     <div class="mb-3"  style="width: 40%;">
                       <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                      <input type="text" class="form-control" id="email" name="email"placeholder="Enter email">
+                      <input type="text" class="form-control" id="email" name="email" placeholder="Enter email"  value="<?php echo $rows['email']; ?>">
                       <p id="img3" style="margin-bottom: -1rem;"></p>
                       <span id="mailid" style="color:red; font-weight: bold;"></span>
                     </div>
                     
                   <div class="mb-3"  style="width: 40%;">
-                    <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-                    <span id="addressid" class="text-danger"></span>
-                    <textarea class="form-control" id="adress" rows="3" name="address"></textarea>
+                  <label for="exampleFormControlInput1" class="form-label">Addresse</label>
+                      <input type="text" class="form-control" id="add" name="address" value="<?php echo $rows['addresse']; ?>">
                     <p id="img4" style="margin-bottom: -1rem;"></p>
                       <span id="addid" style="color:red; font-weight: bold;"></span>
                   </div>
                  
                   <div class="col-auto">
-                   <button type="submit" class="btn btn-primary mb-3" name="save">Save</button>
+                   <button type="submit" class="btn btn-primary mb-3" name="update">update</button>
                   </div>
 
               </div>

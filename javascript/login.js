@@ -104,6 +104,7 @@ function validation(){
     }
     else return true
 }
+
 function validateUsername(username) 
     {
         var re = /^[a-zA-Z]{3,20}$/;
@@ -114,9 +115,11 @@ function validateUsername(username)
         var re = /\"|\#|\'|\*|\?|\!|\-/;
         return re.test(password);
     }
+
     function validatePassword(passwordver) 
     {
         var re = /\"|\#|\'|\*|\?|\!|\-/;
         return re.test(passwordver);
     }
     
+

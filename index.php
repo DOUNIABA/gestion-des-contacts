@@ -7,10 +7,12 @@ include "connexion.php"?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueille</title>
+    <title>Accueil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 
-</head>
+  </head>
+
 <body>
     <nav class="navbar navbar-dark bg-dark justify-content-between">
         <a class="navbar-brand">Contacts list</a>
@@ -18,12 +20,12 @@ include "connexion.php"?>
           <a class=" my-2 my-sm-0 nav-link text-light" href="login.php">Login</a>
         </form>
       </nav> 
-<div class="container-fluid">
+<div class="container-fluid" style=" margin-top: 20%;">
      <div class=" row justify-content-center px-3" style="margin-top: 170px;">
      
-         <h1 style="font-size: 68px;">Hello!</h1>
-         <p class="fs-3"><a href="signup.php">Sign up</a> to start creating your contacts list</p>
-         <p class="fs-3">Already have an account?<a href="login.php">Login here</a> </p>
+         <h1 style="font-size: 68px;color:white">Welcome!</h1>
+         <p class="fs-3" style="color:white;"><a href="signup.php">Sign up</a> to start creating your contacts list</p>
+         <p class="fs-3" style="color:white;">Already have an account?<a href="login.php">Login here</a> </p>
    
      </div></div>
 </body>
