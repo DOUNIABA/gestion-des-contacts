@@ -2,10 +2,10 @@
 session_start();
  include ("connexion.php");
  Class User extends Connection{
-    
     private $id;
     private $username;
     private $password;
+    private $date_inscription;
  
     public function getusername(){
         return $this->username;
@@ -21,14 +21,16 @@ session_start();
     public function setpassword($password){
         $this->password=$password;
     }
+
+    
     public function insertuser(){
         // $conn = new Connection();
         // $ss = $conn->connect();
-        $req="INSERT INTO user (username, password) VALUES ( ?, ?)";
+        $req="INSERT INTO user (username, password,date_inscription) VALUES ( ?, ?,?)";
         $foo=$this->connect()->prepare($req);     
         $foo->execute(
               [
-                $this->username, $this->password
+                $this->username, $this->password,$this->date_inscription
               ]
           );
           return $foo;
@@ -52,9 +54,4 @@ session_start();
      echo"n'existe pas";
  } } }
   
-       
-
-
 ?>
-
-

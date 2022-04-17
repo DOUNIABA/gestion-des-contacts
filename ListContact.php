@@ -1,4 +1,3 @@
-
 <?php
 
 include('contact.php');
@@ -10,15 +9,15 @@ if(isset($_POST['save'])){
   $contact->setphone($_POST['phone']);
   $contact->setaddress($_POST['address']);
   $contact->setid_user($_SESSION["id"]);
-
   if($contact->addcontact()){
+
     header('location:formulaire.php');
   }else{
      echo "non ajouté";
   }
- 
 }
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -27,37 +26,49 @@ if(isset($_POST['save'])){
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>        
-    </head>
+        <link rel="stylesheet" href="style1.css">
+
+      </head>
     <body>
-  
+    <nav class="navbar navbar-dark bg-dark justify-content-between">
+        <a class="navbar-brand">Contacts list</a>
+        <form class="form-inline">
+           <div class="head" style="display:flex;">
+            <a class=" my-2 my-sm-0 nav-link text-light" href="ListContact.php">contact</a>
+            <a class=" my-2 my-sm-0 nav-link text-light" href="pageprofile.php">profile</a>
+            <a class=" my-2 my-sm-0 nav-link text-light" href="login.php">Login</a></div>
+
+        </form>
+      </nav>
         <main>
             <div class="container" >
-              <div class="content" style="margin-left: 16%;">
-                 <div><h1>Contacts</h1></div>
+              <div class="content" style="margin-left: 16%;margin-top: 16%;">
+                 <div style="text-align:center;"><h1>Contacts</h1></div>
                 <div class="list">
-                    <h2>Contacts list:</h2>
-                    <span>No contacts.</span>
+                  
                     <h3>Add contact</h3>              
                   </div>
-
-                <form class="form-container" action="" method="POST" onsubmit="return validation()">  
+                  <form class="form-container" action="" method="POST" id="demo-form"  data-parsley-validate>  
+                 
+                  <div style="display:flex;" > 
                   <div class="mb-3 " style="width: 40%;">
                   <label for="exampleFormControlInput1" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="nom" name="nom" placeholder="Enter name">
+                  <input type="text" class="form-control" id="nom" name="nom" placeholder="Enter name" data-parsley-inputs required>
                   <p id="img" style="margin-bottom: -1rem; width: 10px;"></p>
                   <span id="nomid" style="color:red; font-weight: bold;"></span>
                 </div>
 
                     <div class="mb-3"  style="width: 40%;">
                       <label for="exampleFormControlInput1" class="form-label">Phone</label>
-                      <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone">
+                      <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone" data-parsley-type="integer"	 required style=" margin-left: 27px;">
                       <p id="img2" style="margin-bottom: -1rem;"></p>
                       <span id="phoneid"style="color:red; font-weight: bold;"></span>
-                    </div>
-               
+                    </div></div>
+
+                    <div style="display:flex;" > 
                     <div class="mb-3"  style="width: 40%;">
                       <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                      <input type="text" class="form-control" id="email" name="email"placeholder="Enter email">
+                      <input type="text" class="form-control" id="email" name="email"placeholder="Enter email" data-parsley-type="email" required >
                       <p id="img3" style="margin-bottom: -1rem;"></p>
                       <span id="mailid" style="color:red; font-weight: bold;"></span>
                     </div>
@@ -65,26 +76,27 @@ if(isset($_POST['save'])){
                   <div class="mb-3"  style="width: 40%;">
                     <label for="exampleFormControlTextarea1" class="form-label">Address</label>
                     <span id="addressid" class="text-danger"></span>
-                    <textarea class="form-control" id="adress" rows="3" name="address"></textarea>
+                    <textarea class="form-control" id="adress" rows="3" name="address" data-parsley-inputs required style=" margin-left: 27px;"></textarea>
                     <p id="img4" style="margin-bottom: -1rem;"></p>
                       <span id="addid" style="color:red; font-weight: bold;"></span>
-                  </div>
+                  </div></div>
                  
                   <div class="col-auto">
-                   <button type="submit" class="btn btn-primary mb-3" name="save">Save</button>
+                   <button type="submit" class="btn btn-secondary mb-3" name="save" style=" margin-top: 15px;width: 146px;margin-left: 30%;">Save</button>
                   </div>
-
+                 
               </div>
-
-                </form>         
-                            
+                </form>
+                   
             </div>
         </main>
+        
         <script src="javascript/validation.js"> </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
- 
+        <script src="jquery.js"></script>
+        <script src="parsley.min.js"></script>
     </body>
 </html>

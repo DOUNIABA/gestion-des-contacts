@@ -51,6 +51,7 @@ include('connexion.php');
     public function setid_user($id_user){
         $this->id_user=$id_user;
     }
+   
 
    public function addcontact(){
    $req= $this->connect()->prepare("INSERT INTO contact (username,email,phone,addresse,id_user)VALUES (?,?,?,?,?)");

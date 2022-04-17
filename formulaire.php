@@ -24,10 +24,18 @@
         <link rel="stylesheet" href=".css">
     </head>
     <body>
+
+    <nav class="navbar navbar-dark bg-dark justify-content-between">
+        <a class="navbar-brand">Contacts list</a>
+        <form class="form-inline">
+          <a class=" my-2 my-sm-0 nav-link text-light" href="login.php">Login</a>
+        </form>
+      </nav> 
         <div class="container " style="margin-left: 16%;  margin-top: 10%;">
+        <h2>Contacts list:</h2>
             <div class="table-responsive">
-                <table class="table align-middle">
-               <a  href="ListContact.php"> <button type="submit" class="btn btn-primary">ADD NEW CONTACT</button>  </a>
+                <table class="table table-hover">
+             <div class="boutton"> <a  href="ListContact.php"> <button type="submit" class="btn btn-secondary" style="margin-left: 84%;">ADD NEW CONTACT</button>  </a></div>
 
                   <thead>
                     <tr>
