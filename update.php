@@ -5,8 +5,14 @@ include ('contact.php');
   $edit=new contact();
   $edit->setid($_GET['updateid']);
   $result=$edit->select_COTACT();
-
   if (isset($_POST['update'])) {
+    if (empty($_POST['email']) || empty($_POST['nom']) || empty($_POST['address']) || 
+    empty($_POST['phone']))
+    {
+      echo '<div class="alert alert-danger" role="alert">
+      Veuillez remplir tous les champs!
+    </div>';}
+    else {
 $edit->setemail($_POST['email']);
 $edit->setusername($_POST['nom']);
 $edit->setaddress($_POST['address']);
@@ -14,6 +20,8 @@ $edit->setphone($_POST['phone']);
 if($edit->update()){
    header('location:formulaire.php');
 }
+    }
+
 }
 $rows=$result[0];?>
 
@@ -68,14 +76,11 @@ $rows=$result[0];?>
                       <span id="addid" style="color:red; font-weight: bold;"></span>
                   </div>
                  
-                  <div class="col-auto">
-                   <button type="submit" class="btn btn-secondary mb-5" name="update">update</button>
+                  <div class="col-auto mt-5" >
+                   <button type="submit" class="btn btn-secondary mb-5 " name="update">update</button>
                   </div>
-
               </div>
-
-                </form>         
-                            
+                </form>                 
             </div>
         </main>
         <script src="javascript/validation.js"> </script>

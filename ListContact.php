@@ -1,20 +1,30 @@
-<?php
 
+<?php
 include('contact.php');
 session_start();
 $contact= new Contact();
 if(isset($_POST['save'])){
+
+    if (empty($_POST['nom']) || empty($_POST['email']) || empty($_POST['phone']) || 
+    empty($_POST['address']))
+    {
+      echo '<div class="alert alert-danger" role="alert">
+    **Something went wrong!!**
+    </div>';}
+    else {
   $contact->setusername($_POST['nom']);
   $contact->setemail($_POST['email']);
   $contact->setphone($_POST['phone']);
   $contact->setaddress($_POST['address']);
   $contact->setid_user($_SESSION["id"]);
   if($contact->addcontact()){
-
     header('location:formulaire.php');
-  }else{
-     echo "non ajouté";
+    }
+else{
+       echo "non ajouté";}
+  
   }
+     
 }
 ?>
 
@@ -27,7 +37,6 @@ if(isset($_POST['save'])){
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>        
         <link rel="stylesheet" href="style1.css">
-
       </head>
     <body>
     <nav class="navbar navbar-dark bg-dark justify-content-between">
@@ -37,66 +46,49 @@ if(isset($_POST['save'])){
             <a class=" my-2 my-sm-0 nav-link text-light" href="ListContact.php">contact</a>
             <a class=" my-2 my-sm-0 nav-link text-light" href="pageprofile.php">profile</a>
             <a class=" my-2 my-sm-0 nav-link text-light" href="login.php">Login</a></div>
-
         </form>
       </nav>
+      
         <main>
             <div class="container" >
               <div class="content" style="margin-left: 16%;margin-top: 16%;">
                  <div style="text-align:center;"><h1>Contacts</h1></div>
                 <div class="list">
-                  
                     <h3>Add contact</h3>              
                   </div>
-                  <form class="form-container" action="" method="POST" id="demo-form"  data-parsley-validate>  
-                 
+                  <form class="form-container" action="" method="POST" id="demo-form" onsubmit="return validationContact()">  
+
                   <div style="display:flex;" > 
-                  <div class="mb-3 " style="width: 40%;">
-                  <label for="exampleFormControlInput1" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="nom" name="nom" placeholder="Enter name" data-parsley-inputs required>
-                  <p id="img" style="margin-bottom: -1rem; width: 10px;"></p>
+                  <div class="mb-3 " style="width: 40%;">                  
+                  <input type="text" class="form-control" id="nom" name="nom" placeholder="Name" >
                   <span id="nomid" style="color:red; font-weight: bold;"></span>
                 </div>
 
                     <div class="mb-3"  style="width: 40%;">
-                      <label for="exampleFormControlInput1" class="form-label">Phone</label>
-                      <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone" data-parsley-type="integer"	 required style=" margin-left: 27px;">
-                      <p id="img2" style="margin-bottom: -1rem;"></p>
-                      <span id="phoneid"style="color:red; font-weight: bold;"></span>
+                      <input type="text" class="form-control" name="phone" id="phone" placeholder=" Phone Number"  style=" margin-left: 27px;">
+                      <span id="phonid"style="color:red; font-weight: bold;"></span>
                     </div></div>
 
                     <div style="display:flex;" > 
-                    <div class="mb-3"  style="width: 40%;">
-                      <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                      <input type="text" class="form-control" id="email" name="email"placeholder="Enter email" data-parsley-type="email" required >
-                      <p id="img3" style="margin-bottom: -1rem;"></p>
+                    <div class="mt-3"  style="width: 40%;">
+                    <input type="email" class="form-control" id="email" name="email"placeholder="Email address" data-parsley-type="email"  >
                       <span id="mailid" style="color:red; font-weight: bold;"></span>
                     </div>
                     
-                  <div class="mb-3"  style="width: 40%;">
-                    <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-                    <span id="addressid" class="text-danger"></span>
-                    <textarea class="form-control" id="adress" rows="3" name="address" data-parsley-inputs required style=" margin-left: 27px;"></textarea>
-                    <p id="img4" style="margin-bottom: -1rem;"></p>
-                      <span id="addid" style="color:red; font-weight: bold;"></span>
+                  <div class="mt-3"  style="width: 40%;">
+                    <input type="text" class="form-control" id="adress" name="address" placeholder="Address"  style=" margin-left: 27px;">
+                      <span id="addid" style=" font-weight: bold;"></span>
                   </div></div>
                  
-                  <div class="col-auto">
+                  <div class="mt-3">
                    <button type="submit" class="btn btn-secondary mb-3" name="save" style=" margin-top: 15px;width: 146px;margin-left: 30%;">Save</button>
-                  </div>
-                 
+                  </div> 
               </div>
-                </form>
-                   
+                </form>         
             </div>
         </main>
         
-        <script src="javascript/validation.js"> </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-        <script src="jquery.js"></script>
-        <script src="parsley.min.js"></script>
+        <script src="javascript/validation.js"></script>
+
     </body>
 </html>

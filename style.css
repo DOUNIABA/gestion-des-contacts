@@ -2,11 +2,9 @@
 body{
     background-image:url('images/back.png');
     background-size: cover;
-    height:100vh;
-  
- 
-  
+    height:100vh;  
 }
+
 .container-fluid{
     
     max-width: 28%;
@@ -24,13 +22,13 @@ body{
     border: 1px solid rgba(255, 255, 255, 0.3);
 
 }
+
 .content{
     margin-right: 300px;
     margin-bottom: 20px;
 }
 
 input[type=text],input[type=password]{
-   
     box-sizing: border-box;
     padding: 12px 5px;
     outline:none;
@@ -64,9 +62,6 @@ h2{
 }
 
 input[type=submit]:hover{
- 
         background:rgb(231, 218, 218) ;
         opacity: 0,7;
-       
-    
     }

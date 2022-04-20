@@ -14,17 +14,15 @@ function validation(){
         img.innerHTML='<img src="images/1200px-OOjs_UI_icon_error-destructive.svg.png" style=" POSITION: RELATIVE;bottom: 46px; left: 404px; width:39px;">'
         idemail.innerHTML='fill the username Please!'
       return false
-
     }
     
     else if(username.value!=""){
         username.style.borderColor='#7fff00';
         username.style.borderWidth='3px'
         img.innerHTML='<img src="images/checked.png" style=" POSITION: RELATIVE;bottom: 46px; left: 404px; width: 39px;">' 
-        idemail.innerHTML="";
-        
-      
+        idemail.innerHTML="";   
     }
+
     if(!validateUsername(username.value)){
         username.style.borderColor='red';
         username.style.borderWidth='3px';
@@ -56,14 +54,15 @@ function validation(){
         pass.innerHTML="The password should contain only numbers and letters";
         return false
     }
+
     if(password.value.length<7){
         password.style.borderColor='red';
         password.style.borderWidth='3px';
         img2.innerHTML='<img src="images/1200px-OOjs_UI_icon_error-destructive.svg.png" style="POSITION: relative;top: -49px;right:-395px;width:39px;">';
         pass.innerHTML="The password must be at least 6 characters";
         return false
-    
     }
+    
     if(passwordver.value=="" ){
         passwordver.style.borderColor='red';
         passwordver.style.borderWidth='3px';
@@ -94,7 +93,7 @@ function validation(){
         return false
     
     }
-    if(passwordver.value != password.value) {
+    if(passwordver.value!== password.value) {
         passwordver.style.borderColor='red';
         passwordver.style.borderWidth='3px';
         img22.innerHTML='<img src="images/1200px-OOjs_UI_icon_error-destructive.svg.png" style="POSITION: relative;top: -49px;right:-395px;width:39px;">';
@@ -102,7 +101,6 @@ function validation(){
         return false
     
     }
-    else return true
 }
 
 function validateUsername(username) 

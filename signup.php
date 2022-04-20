@@ -6,7 +6,6 @@ $ins=new User();
 if(isset($_POST['signup'])){
 $ins->setusername($_POST['user']);
 $ins->setpassword(password_hash($_POST['pass'],PASSWORD_DEFAULT));
-$ins->setdate=date('Y-m-d');
 if($ins->insertuser()){
   header('location:login.php');
 }else{
@@ -39,16 +38,16 @@ if($ins->insertuser()){
       <div class="row justify-content-center mt-5">
           <div class="content col-sm-12 col-6 col-lg-3 mt-5"> 
             <h2 class="text-center"> Sign up </h2>
-            <form method="post" action="" id="register" data-parsley-validate > 
+            <form method="post" action="" onsubmit="return validation()" > 
                 <div class=" name mb-3 ">
                   <label for="exampleInputEmail1" class="form-label">Username</label>
-                  <input type="text" class="form-control" id="username" placeholder="Username" name="user" style="  width: 300px;" required minlength="3" >
+                  <input type="text" class="form-control" id="username" placeholder="Username" name="user" style="  width: 300px;"  minlength="3" >
                   <p id="img" style="margin-bottom: -1rem;"></p>
                   <span id="idemail" style="color:red; font-weight: bold;"></span>
                 </div>
                  <div class="mb-3 ">
                     <label for="exampleInputEmail1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="pass" placeholder="Password" requiered minlength="3" style="  width: 300px;">
+                    <input type="password" class="form-control" id="password" name="pass" placeholder="Password"  minlength="3" style="  width: 300px;">
                     <p id="img2"  style="margin-bottom: -1rem;"></p>
                     <span id="pass" style="color:red; font-weight: bold; "></span>
                   </div>

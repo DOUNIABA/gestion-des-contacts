@@ -24,17 +24,14 @@ session_start();
 
     
     public function insertuser(){
-        // $conn = new Connection();
-        // $ss = $conn->connect();
-        $req="INSERT INTO user (username, password,date_inscription) VALUES ( ?, ?,?)";
+        $req="INSERT INTO user (username, password,date_inscription) VALUES ( ?, ?,sysdate())";
         $foo=$this->connect()->prepare($req);     
         $foo->execute(
               [
-                $this->username, $this->password,$this->date_inscription
+                $this->username, $this->password
               ]
           );
           return $foo;
-       
     }
     
     public function login(){
@@ -44,14 +41,17 @@ session_start();
         $exc->execute([ 
         $this->username ] );
         $res=$exc->fetch(PDO::FETCH_ASSOC); 
-        if(password_verify($this->password, $res['password'])==true) {
-        
+        if(password_verify($this->password, $res['password'])==true) {  
         $_SESSION['username']=$res['username'];
+        $_SESSION['date_inscription']=$res['date_inscription'];
         $_SESSION["id"]=$res["id"];
-         return $res;
+        $_SESSION['lastLogin'] = date('Y-m-d h:i:s a', time());
+        
+          return $res;
 }
  else{
      echo"n'existe pas";
  } } }
   
+ 
 ?>

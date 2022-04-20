@@ -93,8 +93,4 @@ include('connexion.php');
     return $req->fetchAll();
 }
 }
-
-
-
-
 ?>

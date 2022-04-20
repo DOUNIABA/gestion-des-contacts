@@ -17,9 +17,8 @@ session_start();
         <a class="navbar-brand">Contacts list</a>
         <form class="form-inline">
            <div class="head" style="display:flex;">
+            <a class=" my-2 my-sm-0 nav-link text-light" href="pageprofile.php"> <?php echo $_SESSION['username'];?> </a>
             <a class=" my-2 my-sm-0 nav-link text-light" href="ListContact.php">contact</a>
-            <a class=" my-2 my-sm-0 nav-link text-light" href="contact.php">profile</a>
-            <a class=" my-2 my-sm-0 nav-link text-light" href="login.php">Login</a></div>
 
         </form>
       </nav>
@@ -37,11 +36,11 @@ session_start();
                   </tr>
                   <tr>
                     <td class="fs-5 fw-bold">Signup date:</td>
-                    <td>Sun, 07apr 2019 16:11:25 +0000</td>
+                    <td><?php echo $_SESSION['date_inscription'];?> </td>
                   </tr>
                   <tr>
                     <td class="fs-5 fw-bold">Last login:</td>
-                    <td>Mon, 08apr 2019 14:24:20 +0000</td>
+                    <td><?php echo $_SESSION['lastLogin']; ?></td>
                   </tr>
                  
                 </tbody>
