@@ -22,7 +22,6 @@ session_start();
         $this->password=$password;
     }
 
-    
     public function insertuser(){
         $req="INSERT INTO user (username, password,date_inscription) VALUES ( ?, ?,sysdate())";
         $foo=$this->connect()->prepare($req);     
@@ -42,15 +41,17 @@ session_start();
         $this->username ] );
         $res=$exc->fetch(PDO::FETCH_ASSOC); 
         if(password_verify($this->password, $res['password'])==true) {  
+        $_SESSION["id"]=$res["id"];
         $_SESSION['username']=$res['username'];
         $_SESSION['date_inscription']=$res['date_inscription'];
-        $_SESSION["id"]=$res["id"];
         $_SESSION['lastLogin'] = date('Y-m-d h:i:s a', time());
         
           return $res;
 }
  else{
-     echo"n'existe pas";
+     echo'<div class="alert alert-danger" role="alert">
+       **Something went wrong!!**
+         </div>';
  } } }
   
  

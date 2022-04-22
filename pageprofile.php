@@ -1,7 +1,7 @@
+
 <?php
 session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +17,14 @@ session_start();
         <a class="navbar-brand">Contacts list</a>
         <form class="form-inline">
            <div class="head" style="display:flex;">
-            <a class=" my-2 my-sm-0 nav-link text-light" href="pageprofile.php"> <?php echo $_SESSION['username'];?> </a>
-            <a class=" my-2 my-sm-0 nav-link text-light" href="ListContact.php">contact</a>
+           <nav class="navbar navbar-dark bg-dark justify-content-between">
+        <form class="form-inline">
+           <div class="head" style="display:flex;">
+            <a class=" my-2 my-sm-0 nav-link text-light" href="pageprofile.php" style="font-weight: bold;"><?php echo $_SESSION['username'];?></a>
+            <a class=" my-2 my-sm-0 nav-link text-light" href="formulaire.php">contact</a>
+            <a class=" my-2 my-sm-0 nav-link text-light" href="logout.php">logout</a></div>
+        </form>
+      </nav>
 
         </form>
       </nav>

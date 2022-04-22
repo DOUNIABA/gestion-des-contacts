@@ -11,7 +11,7 @@ function validation(){
     if(username.value==""  ){
         username.style.borderColor='red';
         username.style.borderWidth='3px'
-        img.innerHTML='<img src="images/1200px-OOjs_UI_icon_error-destructive.svg.png" style=" POSITION: RELATIVE;bottom: 46px; left: 404px; width:39px;">'
+        img.innerHTML='<img src="images/error.png" style=" POSITION: RELATIVE;bottom: 46px; left: 404px; width:39px;">'
         idemail.innerHTML='fill the username Please!'
       return false
     }
@@ -26,7 +26,7 @@ function validation(){
     if(!validateUsername(username.value)){
         username.style.borderColor='red';
         username.style.borderWidth='3px';
-        img.innerHTML='<img src="images/1200px-OOjs_UI_icon_error-destructive.svg.png" style=" POSITION: RELATIVE;bottom: 46px; left: 404px; width: 39px">'
+        img.innerHTML='<img src="images/error.png" style=" POSITION: RELATIVE;bottom: 46px; left: 404px; width: 39px">'
         idemail.innerHTML="The username should contain only numbers and letters";
         return false
     }
@@ -35,7 +35,7 @@ function validation(){
         password.style.borderColor='red';
         password.style.borderWidth='3px';
         document.getElementById('pass').innerHTML ="Password does'nt Match!"
-        img2.innerHTML='<img src="images/1200px-OOjs_UI_icon_error-destructive.svg.png" style="POSITION: relative;top:-49px;right:-395px;width: 39px;">'
+        img2.innerHTML='<img src="images/error.png" style="POSITION: relative;top:-49px;right:-395px;width: 39px;">'
         pass.innerHTML="fill the password Please!";
         return false
 
@@ -50,7 +50,7 @@ function validation(){
     if(validatePassword(password.value)){
         password.style.borderColor='red';
         password.style.borderWidth='3px'
-        img2.innerHTML='<img src="images/1200px-OOjs_UI_icon_error-destructive.svg.png" style="POSITION: relative;top: -49px;right:-395px;width:39px;">';
+        img2.innerHTML='<img src="images/error.png" style="POSITION: relative;top: -49px;right:-395px;width:39px;">';
         pass.innerHTML="The password should contain only numbers and letters";
         return false
     }
@@ -58,7 +58,7 @@ function validation(){
     if(password.value.length<7){
         password.style.borderColor='red';
         password.style.borderWidth='3px';
-        img2.innerHTML='<img src="images/1200px-OOjs_UI_icon_error-destructive.svg.png" style="POSITION: relative;top: -49px;right:-395px;width:39px;">';
+        img2.innerHTML='<img src="images/error.png" style="POSITION: relative;top: -49px;right:-395px;width:39px;">';
         pass.innerHTML="The password must be at least 6 characters";
         return false
     }
@@ -67,7 +67,7 @@ function validation(){
         passwordver.style.borderColor='red';
         passwordver.style.borderWidth='3px';
         document.getElementById('pass').innerHTML ="Password does'nt Match!"
-        img22.innerHTML='<img src="img/1200px-OOjs_UI_icon_error-destructive.svg.png" style="POSITION: relative;top:-49px;right:-395px;width: 39px;">'
+        img22.innerHTML='<img src="img/error.png" style="POSITION: relative;top:-49px;right:-395px;width: 39px;">'
         pass2.innerHTML="fill the password Please!";
         return false
 
@@ -81,14 +81,14 @@ function validation(){
     if(validatePassword(passwordver.value)){
         passwordver.style.borderColor='red';
         passwordver.style.borderWidth='3px'
-        img22.innerHTML='<img src="images/1200px-OOjs_UI_icon_error-destructive.svg.png" style="POSITION: relative;top: -49px;right:-395px;width:39px;">';
+        img22.innerHTML='<img src="images/error.png" style="POSITION: relative;top: -49px;right:-395px;width:39px;">';
         pass2.innerHTML="The password should contain only numbers and letters";
         return false
     }
     if(passwordver.value.length<7){
         passwordver.style.borderColor='red';
         passwordver.style.borderWidth='3px';
-        img22.innerHTML='<img src="images/1200px-OOjs_UI_icon_error-destructive.svg.png" style="POSITION: relative;top: -49px;right:-395px;width:39px;">';
+        img22.innerHTML='<img src="images/error.png" style="POSITION: relative;top: -49px;right:-395px;width:39px;">';
         pass2.innerHTML="The password must be at least 6 characters";
         return false
     
@@ -96,7 +96,7 @@ function validation(){
     if(passwordver.value!== password.value) {
         passwordver.style.borderColor='red';
         passwordver.style.borderWidth='3px';
-        img22.innerHTML='<img src="images/1200px-OOjs_UI_icon_error-destructive.svg.png" style="POSITION: relative;top: -49px;right:-395px;width:39px;">';
+        img22.innerHTML='<img src="images/error.png" style="POSITION: relative;top: -49px;right:-395px;width:39px;">';
         pass2.innerHTML="The password verfy  not valid ";
         return false
     

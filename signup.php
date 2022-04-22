@@ -11,7 +11,6 @@ if($ins->insertuser()){
 }else{
     echo 'non ajouté';
 }
-
 }   
 ?>
 
@@ -59,7 +58,7 @@ if($ins->insertuser()){
                 </div>   
                  <input type="submit" name="signup" value="sing up"  class="btn btn-primary mt-5"  style="  width: 300px;">
                     <div style="color:black;"><span >Already have an account?</span></div>
-                     <a class="text-primary text-decoration-underline" href="login.php"> <span >Login here </span></a> 
+                     <a class="text-primary " href="login.php" style="text-decoration:none;"> <span >Login here </span></a> 
                      
                   </div>
             </form>

@@ -2,7 +2,7 @@
 <?php
 include('connexion.php');
  Class Contact extends Connection{
-
+     
     private $id;
     private $username;
     private $phone;
@@ -52,7 +52,6 @@ include('connexion.php');
         $this->id_user=$id_user;
     }
    
-
    public function addcontact(){
    $req= $this->connect()->prepare("INSERT INTO contact (username,email,phone,addresse,id_user)VALUES (?,?,?,?,?)");
    $req->execute([
@@ -63,7 +62,7 @@ include('connexion.php');
        $this->id_user
    ]);
  return true;
-   }
+   } 
 
    public function select(){
        $req=$this->connect()->prepare("SELECT * FROM contact where id_user=?");
@@ -92,5 +91,7 @@ include('connexion.php');
     $req->execute([$this->id]);
     return $req->fetchAll();
 }
+
 }
+
 ?>

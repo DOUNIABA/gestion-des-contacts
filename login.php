@@ -1,4 +1,3 @@
-
 <?php
 include('user.php');
 $error = "";
@@ -9,15 +8,12 @@ if (isset($_POST['Login'])){
   $user->setusername($_POST['username']);
 
    if($user->login()){
-  
     header("Location: pageprofile.php");
-    
   }else{
     $error = "incorect username or password !!";
       
    }  
   }
-
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +55,7 @@ if (isset($_POST['Login'])){
         </div >
         
         <input type="submit" name="Login" value="login" class=" btn-primary mt-5 " style=" width: 447px;" >
-        <div style="">No account? <a href="signup.php">Sign up here.</a></div>
+       No account? <a href="signup.php" style="text-decoration:none;">Sign up here.</a>
       </form>
       </div>
       </div>

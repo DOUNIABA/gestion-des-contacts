@@ -1,4 +1,3 @@
-
 <?php
 class Connection{
     private $host="localhost";
@@ -10,6 +9,5 @@ class Connection{
         $conn = new PDO("mysql:host=$this->host; dbname=$this->database" ,$this->username ,$this->password);
         return $conn;
     }
-
 }
 ?>

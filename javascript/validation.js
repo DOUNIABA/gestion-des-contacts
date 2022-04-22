@@ -1,15 +1,15 @@
 
-
 function validationContact(){
     var name = document.getElementById('nom');
     var email = document.getElementById('email');
     var phone = document.getElementById('phone');
     var adresse = document.getElementById('adress');
+    
     const mailformat = /^[a-zA-Z-\d]+@[a-zA-Z-\d]+(.[a-zA-Z-\d]+)+$/
     var regx=/^+{0,1}((212)|(0[6589]))\d{8}$/
     var regname= /^(\w{3,} ?)+$/
-    if ( name.value == ""){
 
+    if ( name.value == ""){
      document.getElementById('nomid').innerHTML=" ** Please fill the UserName field";
      document.getElementById('nomid').style.color="red";
      return false;

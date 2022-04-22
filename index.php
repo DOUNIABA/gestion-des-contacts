@@ -17,15 +17,15 @@ include "connexion.php"?>
     <nav class="navbar navbar-dark bg-dark justify-content-between">
         <a class="navbar-brand">Contacts list</a>
         <form class="form-inline">
-          <a class=" my-2 my-sm-0 nav-link text-light" href="login.php">Login</a>
+          <a class=" my-2 my-sm-0 nav-link text-light" href="login.php">Connexion</a>
         </form>
       </nav> 
 <div class="container-fluid" style=" margin-top: 20%;">
      <div class=" row justify-content-center px-3" style="margin-top: 170px;">
      
          <h1 style="font-size: 68px;color:white">Welcome!</h1>
-         <p class="fs-3" style="color:white;"><a href="signup.php">Sign up</a> to start creating your contacts list</p>
-         <p class="fs-3" style="color:white;">Already have an account?<a href="login.php">Login here</a> </p>
+         <p class="fs-3" style="color:white;"><a href="signup.php" style="text-decoration:none; color:black;"> Sign up </a> to start creating your contacts list</p>
+         <p class="fs-3" style="color:white;">Already have an account?<a href="login.php" style="text-decoration:none; color:black;">Login here</a> </p>
    
      </div></div>
 </body>
