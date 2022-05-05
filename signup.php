@@ -34,31 +34,28 @@ if($ins->insertuser()){
     </nav>
 
     <div  class="container-fluid" >
-      <div class="row justify-content-center mt-5">
+      <div class="row mt-5"style="margin-left:60px">
           <div class="content col-sm-12 col-6 col-lg-3 mt-5"> 
-            <h2 class="text-center"> Sign up </h2>
+            <h2 class="text-center"style=" margin-bottom:10px;"> Sign up </h2>
             <form method="post" action="" onsubmit="return validation()" > 
                 <div class=" name mb-3 ">
-                  <label for="exampleInputEmail1" class="form-label">Username</label>
-                  <input type="text" class="form-control" id="username" placeholder="Username" name="user" style="  width: 300px;"  minlength="3" >
-                  <p id="img" style="margin-bottom: -1rem;"></p>
+                  <input type="text" class="form-control" id="username" placeholder="Username" name="user" style="  width: 300px;" >
+                  <p id="img" style="margin-bottom: 1rem;"></p>
                   <span id="idemail" style="color:red; font-weight: bold;"></span>
                 </div>
                  <div class="mb-3 ">
-                    <label for="exampleInputEmail1" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="pass" placeholder="Password"  minlength="3" style="  width: 300px;">
                     <p id="img2"  style="margin-bottom: -1rem;"></p>
                     <span id="pass" style="color:red; font-weight: bold; "></span>
                   </div>
                  <div class="mb-3 ">
-                  <label for="exampleInputPassword1" class="form-label">Password verify</label>
                   <input type="password" class="form-control" id="passwordver" name ="cpass"placeholder="Password verify" style="  width: 300px;" >
                   <p id="img22"  style="margin-bottom: -1rem;"></p>
                   <span id="pass2" style="color:red; font-weight: bold; "></span>
                 </div>   
                  <input type="submit" name="signup" value="sing up"  class="btn btn-primary mt-5"  style="  width: 300px;">
-                    <div style="color:black;"><span >Already have an account?</span></div>
-                     <a class="text-primary " href="login.php" style="text-decoration:none;"> <span >Login here </span></a> 
+                    <div style="color:black;"><span >Already have an account?</span>
+                     <a class="text-primary " href="login.php" style="text-decoration:none;">Login here</a> </div>
                      
                   </div>
             </form>

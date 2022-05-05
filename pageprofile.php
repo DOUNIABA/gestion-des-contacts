@@ -21,8 +21,8 @@ session_start();
         <form class="form-inline">
            <div class="head" style="display:flex;">
             <a class=" my-2 my-sm-0 nav-link text-light" href="pageprofile.php" style="font-weight: bold;"><?php echo $_SESSION['username'];?></a>
-            <a class=" my-2 my-sm-0 nav-link text-light" href="formulaire.php">contact</a>
-            <a class=" my-2 my-sm-0 nav-link text-light" href="logout.php">logout</a></div>
+            <a class=" my-2 my-sm-0 nav-link text-light" href="formulaire.php">Contact</a>
+            <a class=" my-2 my-sm-0 nav-link text-light" href="logout.php">Logout</a></div>
         </form>
       </nav>
 
@@ -31,11 +31,11 @@ session_start();
       <div class="d-flex justify-content-center align-items-center">
            <div  class=" m-5  w-100">
             <h1 class="my-5"> Welcome, <?php echo $_SESSION['username'];?> !</h1>
-            <h3 class=" my-5"> Your  profile:</h3>
+            <h3 class=" my-5"> Your  profile info:</h3>
             <table class="table table-dark table-hover">       
                 <tbody>            
                   <tr>
-                    <td class="fs-5 fw-bold ">Username;</td>
+                    <td class="fs-5 fw-bold ">Username</td>
                     <td> <?php echo $_SESSION['username'];
                      ?>  
                 </div></td>
@@ -47,12 +47,10 @@ session_start();
                   <tr>
                     <td class="fs-5 fw-bold">Last login:</td>
                     <td><?php echo $_SESSION['lastLogin']; ?></td>
-                  </tr>
-                 
+                  </tr>             
                 </tbody>
               </table>
         </div>
-      </di>
-       
+      </di>       
 </body>
 </html>

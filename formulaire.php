@@ -26,7 +26,7 @@
         $msg= '<div class="alert alert-danger" role="alert">
        **Something went wrong!!**
          </div>';}
-         
+        
       else {
     $contact->setusername($_POST['nom']);
     $contact->setemail($_POST['email']);

@@ -9,6 +9,7 @@ $msg=null;
     if (empty($_POST['email']) || empty($_POST['nom']) || empty($_POST['address']) || 
     empty($_POST['phone']))
     {
+      
      $msg='<div class="alert alert-danger" role="alert">
       Veuillez remplir tous les champs!
     </div>';}

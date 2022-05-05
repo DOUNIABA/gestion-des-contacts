@@ -10,4 +10,5 @@ class Connection{
         return $conn;
     }
 }
+
 ?>

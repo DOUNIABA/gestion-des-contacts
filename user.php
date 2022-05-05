@@ -1,4 +1,4 @@
- <?php
+<?php
 session_start();
  include ("connexion.php");
  Class User extends Connection{
@@ -17,7 +17,6 @@ session_start();
     public function getpassword(){
         return $this->password;
     }
-    
     public function setpassword($password){
         $this->password=$password;
     }
@@ -32,7 +31,7 @@ session_start();
           );
           return $foo;
     }
-    
+
     public function login(){
         $db= $this->connect();
         $req =(" SELECT * FROM user WHERE username =? ");    
@@ -53,6 +52,5 @@ session_start();
        **Something went wrong!!**
          </div>';
  } } }
-  
- 
+
 ?>

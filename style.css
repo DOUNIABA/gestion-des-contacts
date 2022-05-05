@@ -1,12 +1,13 @@
 
 body{
-    background-image:url('images/back.png');
-    background-size: cover;
-    height:100vh;  
+    background-image:url('images/undraw_contact_us_re_4qqt.svg');
+    background-repeat: no-repeat;
+    background-position: 20%;
+    background-size: 60%;
 }
 
 .container-fluid{
-    
+   margin-right: 200px;
     max-width: 28%;
     margin-top: 100px;
     border-radius: 16px;
@@ -23,8 +24,7 @@ body{
 
 }
 
-.content{
-    margin-right: 300px;
+.content{  
     margin-bottom: 20px;
 }
 
@@ -32,11 +32,12 @@ input[type=text],input[type=password]{
     box-sizing: border-box;
     padding: 12px 5px;
     outline:none;
-    border: none;
+    border: solid 1px black;
     border-bottom: 1px dotted #fff;
     border-radius: 5px;
     margin: 5px;
     font-weight: bold;
+    margin-bottom: 50px;
 }
 
 input[type=submit]{
