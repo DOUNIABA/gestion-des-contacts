@@ -35,16 +35,16 @@ $rows=$result[0];
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>        
-        <link rel="stylesheet" href="style1.css">
+        <link rel="stylesheet" href="stylee.css">
 
       </head>
     <body>  
         <main>
             <div class="container" >
-              <div class="content" style="margin-left: 16%; margin-top:17%">
-                 <div><h1>Contacts</h1></div>
+              <div class="content" style="margin-left: 16%; margin-top :80px;">
+   
                 <div class="list">                 
-                    <h3>Edit contact</h3>              
+                    <h3>Edit your contact</h3>              
                   </div>
                   <div style="width:50%;"> <?php echo $msg;?></div>
                 <form class="form-container" action="" method="POST" onsubmit="return validation()">  
@@ -77,7 +77,7 @@ $rows=$result[0];
                   </div>
 
                   <div class="col-auto mt-5" >
-                   <button type="submit" class="btn btn-secondary mb-5 " name="update">update</button>         
+                   <button type="submit" class="btn  mb-5 " name="update" style="background-color:#6b23f0;color:white;">update</button>         
                   </div>
               </div>
                 </form>                 

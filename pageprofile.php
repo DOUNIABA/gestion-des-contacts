@@ -13,11 +13,11 @@ session_start();
 
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark justify-content-between">
+<nav class="navbar navbar-dark justify-content-between" style="background-color:#6b23f0;">
         <a class="navbar-brand">Contacts list</a>
         <form class="form-inline">
            <div class="head" style="display:flex;">
-           <nav class="navbar navbar-dark bg-dark justify-content-between">
+           <nav class="navbar navbar-dark justify-content-between">
         <form class="form-inline">
            <div class="head" style="display:flex;">
             <a class=" my-2 my-sm-0 nav-link text-light" href="pageprofile.php" style="font-weight: bold;"><?php echo $_SESSION['username'];?></a>
@@ -29,28 +29,29 @@ session_start();
         </form>
       </nav>
       <div class="d-flex justify-content-center align-items-center">
-           <div  class=" m-5  w-100">
-            <h1 class="my-5"> Welcome, <?php echo $_SESSION['username'];?> !</h1>
+           <div  class=" m-5 w-50">
+            <h1 class="my-5" style="margin-right:20px;"> Welcome, <?php echo $_SESSION['username'];?> !</h1>
             <h3 class=" my-5"> Your  profile info:</h3>
-            <table class="table table-dark table-hover">       
+            <table class="table table-hover">       
                 <tbody>            
                   <tr>
                     <td class="fs-5 fw-bold ">Username</td>
-                    <td> <?php echo $_SESSION['username'];
-                     ?>  
-                </div></td>
-                  </tr>
-                  <tr>
                     <td class="fs-5 fw-bold">Signup date:</td>
-                    <td><?php echo $_SESSION['date_inscription'];?> </td>
-                  </tr>
-                  <tr>
                     <td class="fs-5 fw-bold">Last login:</td>
+                    <td> 
+         
+                   </td>
+                  </tr>
+                 
+                  <tr>                   
+                   <td><?php echo $_SESSION['username'];?></td>                      
+                  <td><?php echo $_SESSION['date_inscription'];?> </td>               
                     <td><?php echo $_SESSION['lastLogin']; ?></td>
                   </tr>             
                 </tbody>
               </table>
         </div>
-      </di>       
+      </div>       
 </body>
 </html>
+

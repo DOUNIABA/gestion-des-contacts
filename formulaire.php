@@ -46,6 +46,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
+        Your new contact:
         <h5 class="modal-title" id="staticBackdropLabel"></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -56,10 +57,10 @@
                   <form class="form-container" action="" method="POST" id="demo-form" onsubmit="return validationContact()">  
 
                   <div style="display:flex;" > 
-                  <div class="mb-3 " style="width: 40%;">                  
-                  <input type="text" class="form-control" id="nom" name="nom" placeholder="Name" >
-                  <span id="nomid" style="color:red; font-weight: bold;"></span>
-                </div>
+                    <div class="mb-3 " style="width: 40%;">                  
+                    <input type="text" class="form-control" id="nom" name="nom" placeholder="Name" >
+                    <span id="nomid" style="color:red; font-weight: bold;"></span>
+                    </div>
 
                     <div class="mb-3"  style="width: 40%;">
                       <input type="text" class="form-control" name="phone" id="phone" placeholder=" Phone Number"  style=" margin-left: 27px;">
@@ -79,7 +80,7 @@
                 </div>      
                 <div style="width:50%;"> <?php echo $msg; ?></div>
                   <div class="mt-3">
-                   <button type="submit" class="btn btn-secondary mb-3" name="save" style=" margin-top: 15px;width: 146px;margin-left: 30%;">Save</button>
+                   <button type="submit" class="btn  mb-3" name="save" style=" margin-top: 15px;width: 146px;margin-left: 30%; background-color:#6b23f0;color:white;">Save</button>
                   </div> 
 
               </div>
@@ -89,13 +90,14 @@
     </div>
   </div>
 </div>
-      <nav class="navbar navbar-dark bg-dark justify-content-between">
+
+<nav class="navbar navbar-dark justify-content-between" style="background-color:#6b23f0;">
           <a class="navbar-brand">Contacts list</a>
           <form class="form-inline">
           <div class="head" style="display:flex;">
           <a class=" my-2 my-sm-0 nav-link text-light" href="pageprofile.php" style="font-weight: bold;"><?php echo $_SESSION['username'];?></a>
-          <a class=" my-2 my-sm-0 nav-link text-light" href="formulaire.php">contact</a>
-            <a class=" my-2 my-sm-0 nav-link text-light" href="logout.php">logout</a></div>
+          <a class=" my-2 my-sm-0 nav-link text-light" href="formulaire.php">Contact</a>
+            <a class=" my-2 my-sm-0 nav-link text-light" href="logout.php">Logout</a></div>
           </form>
         </nav> 
 
@@ -127,7 +129,6 @@
          </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-  <script src="javascript/validation.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>

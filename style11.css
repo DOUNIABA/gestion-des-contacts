@@ -2,8 +2,8 @@
 body{
     background-image:url('images/undraw_contact_us_re_4qqt.svg');
     background-repeat: no-repeat;
-    background-position: 20%;
-    background-size: 60%;
+    background-position: 10%;
+    background-size:60%;
 }
 
 .container-fluid{
@@ -16,12 +16,6 @@ body{
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     background: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
 }
 
 .content{  
